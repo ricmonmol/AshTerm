@@ -65,11 +65,11 @@ export default {
       },
     },
     cryptowatcher: {
-      description: "Opens my project repo.",
+      description: "Opens deploy.",
       usage: "github",
       fn: () => {
-        window.open("https://github.com/ricmonmol/Crypto-App_react", "_blank");
-        return "opening github project...";
+        window.open("https://just-a-cryptowatcher.netlify.app/", "_blank");
+        return "opening a external link...";
       },
     },
     countriesapp: {
@@ -81,11 +81,11 @@ export default {
       },
     },
     urbanbuy: {
-      description: "Opens my project repo.",
+      description: "Opens deploy.",
       usage: "github",
       fn: () => {
-        window.open("https://github.com/jclima01/Proyecto-Final", "_blank");
-        return "opening github project...";
+        window.open("https://urbanbuy.netlify.app/", "_blank");
+        return "opening a external link...";
       },
     },
   },
