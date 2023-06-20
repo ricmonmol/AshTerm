@@ -6,11 +6,8 @@ export default function Term() {
   const cmds = commands.commands;
   const owrs = commands.overwrites;
   const terminal = React.createRef();
-  const [prompt, setPrompt] = React.useState("ricardo@ricardoterm:~$ ");
-  const [home, sethome] = React.useState("ashterm");
-  const [dir, setdir] = React.useState({
-    ashterm: [],
-  });
+  const prompt = "ricardo@ricardoterm:~$ ";
+
   return (
     <Terminal
       ref={terminal}
