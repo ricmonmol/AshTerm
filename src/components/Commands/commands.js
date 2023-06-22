@@ -1,4 +1,14 @@
 /* eslint-disable import/no-anonymous-default-export */
+function generateParagraph(data) {
+  const rows = data.map((item) => {
+    return Object.entries(item)
+      .map(([key, value]) => `${key}: ${value}`)
+      .join("\n");
+  });
+
+  return rows.join("\n---\n");
+}
+
 export default {
   commands: {
     echo: {
@@ -69,15 +79,25 @@ export default {
       description: "Projects I have worked on.",
       usage: "projects",
       fn: () => {
-        return `
-                    Cool projects I have worked on. You can call them by thier names as commands.\n---\n
-                    | Name \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0| Description\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 | Technologies
-                    |------------------|------------------------------|-------------------------------
-                    |'cryptowatcher'   | 'Monitor with CoinGecko API' | 'React'
-                    |'countriesapp'    | 'An App about countries'\u00A0\u00A0\u00A0\u00A0 | 'React-Node-Express-Sequelize'
-                    |'urbanbuy'        | 'An App for ecommerce'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 | 'React-Node-Mongodb-Express'
-
-                `;
+        const projectData = [
+          {
+            name: "cryptowatcher",
+            description: "Crypto monitor based on CoinGecko API",
+            technologies: "React",
+          },
+          {
+            name: "countriesapp",
+            description: "An App about countries",
+            technologies: "React-Node-Express-Sequelize",
+          },
+          {
+            name: "urbanbuy",
+            description: "An App for ecommerce managment",
+            technologies: "React-Node-Mongodb-Express",
+          },
+        ];
+        return `These are the project I have worked on, you can call them using their name as commands. 
+          \n---\n${generateParagraph(projectData)}`;
       },
     },
     cryptowatcher: {
