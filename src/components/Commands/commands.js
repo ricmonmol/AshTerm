@@ -70,12 +70,12 @@ export default {
       usage: "projects",
       fn: () => {
         return `
-                    Cool projects I have worked on. You can call them by thier names as commands.\n
-                    | name             | description                  | technologies
-                    |------------------|------------------------------|------------------------------
+                    Cool projects I have worked on. You can call them by thier names as commands.\n---\n
+                    | Name \u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0| Description\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 | Technologies
+                    |------------------|------------------------------|-------------------------------
                     |'cryptowatcher'   | 'Monitor with CoinGecko API' | 'React'
-                    |'countriesapp'    | 'An App about countries'     | 'React-Node-Express-Sequelize'
-                    |'urbanbuy'        | 'An App for ecommerce'       | 'React-Node-Mongodb-Express'
+                    |'countriesapp'    | 'An App about countries'\u00A0\u00A0\u00A0\u00A0 | 'React-Node-Express-Sequelize'
+                    |'urbanbuy'        | 'An App for ecommerce'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 | 'React-Node-Mongodb-Express'
 
                 `;
       },
