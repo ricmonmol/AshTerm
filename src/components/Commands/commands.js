@@ -10,9 +10,22 @@ export default {
       description: "About Me.",
       usage: "about",
       fn: () => {
-        return `About Me.\n---\n
-        My name is Ricardo Montecinos, I live in Tandil, Argentina.
-        \nI'm a fullstack developer, I speak fluent english, I also like urban farming, 3D printing, archery, music, and a lot of other nerd stuff.\n---\n`;
+        return `My name is Ricardo Montecinos, I live in Tandil, Argentina.
+        \nI'm a fullstack developer, I speak fluent english, I also like urban farming, 3D printing, archery, music, and a lot of other nerd stuff.\n`;
+      },
+    },
+    cv: {
+      description: "Resume in english, for spanish use the flag --es",
+      usage: "cv [--en|--es]",
+      fn: (flags) => {
+        let cvLink =
+          "https://drive.google.com/file/d/1vsys26qdW2mNBypJJM7UfJaldsUCLiG0/view?usp=sharing";
+        if (flags && flags.includes("--es")) {
+          cvLink =
+            "https://drive.google.com/file/d/1KvJHGHzaDYnrWopjULWHbVESmWA6vfhZ/view?usp=sharing";
+        }
+        window.open(cvLink, "_blank");
+        return "opening external link...";
       },
     },
     twitter: {
@@ -47,8 +60,8 @@ export default {
       usage: "languages",
       fn: () => {
         return `
-                    these are the languages and tools I know.\n---\n
-                    Javascript, Mongodb, Express, React, Node, Redux, Sequelize, HTML, CSS, Linux, Raspberry, Arduino.\n---\n
+                    these are the languages and tools I know.\n
+                    Javascript, Mongodb, Express, React, Node, Redux, Sequelize, HTML, CSS, Linux, Raspberry, Arduino.\n
                 `;
       },
     },
@@ -57,10 +70,13 @@ export default {
       usage: "projects",
       fn: () => {
         return `
-                    Cool projects I have worked on. You can call them by thier names as commands\n---\n
-                    'cryptowatcher'   | 'monitor with CoinGecko API' - 'React'
-                    'countriesapp'    | 'An App about countries' - 'React-Node-Express-Sequelize'
-                    'urbanbuy'        | 'An App for ecommerce' - 'React-Node-Mongodb-Express'
+                    Cool projects I have worked on. You can call them by thier names as commands.\n
+                    | name             | description                  | technologies
+                    |------------------|------------------------------|------------------------------
+                    |'cryptowatcher'   | 'Monitor with CoinGecko API' | 'React'
+                    |'countriesapp'    | 'An App about countries'     | 'React-Node-Express-Sequelize'
+                    |'urbanbuy'        | 'An App for ecommerce'       | 'React-Node-Mongodb-Express'
+
                 `;
       },
     },

@@ -72,14 +72,14 @@ export default function Term() {
       }}
       styleEchoBack="fullInherit"
       contentStyle={{
-        color: "#ffb86c",
+        color: "#55FFFF",
         fontWeight: "normal",
         paddingLeft: null,
       }} // Text colour
       promptLabelStyle={{ color: "#55FF55", fontWeight: "normal" }} // Prompt label colour
       inputTextStyle={{ color: "#ffffff", fontWeight: "normal" }}
       messageStyle={{
-        color: "#8be9fd",
+        color: "#55FFFF",
         fontWeight: "normal",
         paddingLeft: null,
       }}
