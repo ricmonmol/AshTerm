@@ -84,6 +84,7 @@ export default function Term() {
       }}
       scrollBehavior="auto"
       noDefaults
+      ignoreCommandCase
     />
   );
 }
