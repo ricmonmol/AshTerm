@@ -8,6 +8,16 @@ function generateParagraph(data) {
 
   return rows.join("\n---\n");
 }
+function cv(flags) {
+  let cvLink =
+    "https://drive.google.com/file/d/1vsys26qdW2mNBypJJM7UfJaldsUCLiG0/view?usp=sharing";
+  if (flags && flags.includes("--es")) {
+    cvLink =
+      "https://drive.google.com/file/d/1KvJHGHzaDYnrWopjULWHbVESmWA6vfhZ/view?usp=sharing";
+  }
+  window.open(cvLink, "_blank");
+  return "opening external link...";
+}
 
 export default {
   commands: {
@@ -17,7 +27,7 @@ export default {
       fn: (...args) => args.join(" "),
     },
     about: {
-      description: "About Me.",
+      description: "About Me",
       usage: "about",
       fn: () => {
         return `My name is Ricardo Montecinos, I live in Tandil, Argentina.
@@ -28,34 +38,39 @@ export default {
       description: "Resume in english, for spanish use the flag --es",
       usage: "cv [--en|--es]",
       fn: (flags) => {
-        let cvLink =
-          "https://drive.google.com/file/d/1vsys26qdW2mNBypJJM7UfJaldsUCLiG0/view?usp=sharing";
-        if (flags && flags.includes("--es")) {
-          cvLink =
-            "https://drive.google.com/file/d/1KvJHGHzaDYnrWopjULWHbVESmWA6vfhZ/view?usp=sharing";
-        }
-        window.open(cvLink, "_blank");
-        return "opening external link...";
+        return cv(flags);
       },
     },
     twitter: {
-      description: "Opens my Twitter profile.",
+      description: "Opens my Twitter profile",
       usage: "twitter",
       fn: () => {
         window.open("https://twitter.com/ric_montecinos", "_blank");
         return "opening twitter handle...";
       },
     },
-    github: {
-      description: "Opens my GitHub profile.",
-      usage: "github",
+    spotify: {
+      description: "Some songs I like",
+      usage: "spotify",
       fn: () => {
-        window.open("https://github.com/ricmonmol", "_blank");
-        return "opening github account...";
+        return (
+          /*eslint-disable*/
+          <iframe
+            style={{ borderRadius: "12px" }}
+            src="https://open.spotify.com/embed/playlist/09yjK1OemA1x4445C3OtEl?utm_source=generator&theme=0"
+            width="50%"
+            height="352"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+          /*eslint-enable*/
+        );
       },
     },
     linkedin: {
-      description: "Opens my LinkedIn profile.",
+      description: "Opens my LinkedIn profile",
       usage: "LinkedIn",
       fn: () => {
         window.open(
@@ -66,7 +81,7 @@ export default {
       },
     },
     languages: {
-      description: "Languages I know.",
+      description: "Languages I know",
       usage: "languages",
       fn: () => {
         return `
@@ -75,8 +90,16 @@ export default {
                 `;
       },
     },
+    github: {
+      description: "Opens my GitHub profile",
+      usage: "github",
+      fn: () => {
+        window.open("https://github.com/ricmonmol", "_blank");
+        return "opening github account...";
+      },
+    },
     projects: {
-      description: "Projects I have worked on.",
+      description: "Projects I have worked on",
       usage: "projects",
       fn: () => {
         const projectData = [
@@ -88,12 +111,18 @@ export default {
           {
             name: "countriesapp",
             description: "An App about countries",
-            technologies: "React-Node-Express-Sequelize",
+            technologies: "React, Node, Express, Sequelize, CSS Styles Modules",
           },
           {
             name: "urbanbuy",
             description: "An App for ecommerce managment",
-            technologies: "React-Node-Mongodb-Express",
+            technologies: "React, Node, Mongodb, Express, Auth0",
+          },
+          {
+            name: "rictermm",
+            description:
+              "A terminal styled protfolio, the one you are looking at right now",
+            technologies: "React, Console-Emulator",
           },
         ];
         return `These are the project I have worked on, you can call them using their name as commands. 
@@ -101,7 +130,7 @@ export default {
       },
     },
     cryptowatcher: {
-      description: "Opens deploy.",
+      description: "Opens deploy",
       usage: "github",
       fn: () => {
         window.open("https://just-a-cryptowatcher.netlify.app/", "_blank");
@@ -109,7 +138,7 @@ export default {
       },
     },
     countriesapp: {
-      description: "Opens my project repo.",
+      description: "Opens my project repo",
       usage: "github",
       fn: () => {
         window.open("https://github.com/ricmonmol/countries_henry", "_blank");
@@ -117,7 +146,7 @@ export default {
       },
     },
     urbanbuy: {
-      description: "Opens deploy.",
+      description: "Opens deploy",
       usage: "github",
       fn: () => {
         window.open("https://urbanbuy.netlify.app/", "_blank");

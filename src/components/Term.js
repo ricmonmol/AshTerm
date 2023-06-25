@@ -12,9 +12,8 @@ export default function Term() {
     <Terminal
       ref={terminal}
       welcomeMessage={[
-        "Hey, my name is Ricardo, welcome to my portfolio!",
-        "This is a terminal emulator made with React.",
-        "Type 'help' to see a list of commands.",
+        "Hola!, my name is Ricardo, welcome to my terminal-styled portfolio made with React!",
+        "Type 'help' to see the list of commands.",
       ]}
       commands={{
         clear: {
